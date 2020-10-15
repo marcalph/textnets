@@ -1,0 +1,5 @@
+[flake8]
+select = B,B9,BLK,C,E,F,I,W
+import-order-stye=google
+max-complexity = 10
+max-line-length = 90

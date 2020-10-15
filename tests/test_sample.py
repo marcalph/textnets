@@ -1,8 +1,11 @@
 import os
 import sys
-# sys.path.append("/home/malphonsus/projects/personal/textnets/src/textnets")
-print(os.environ["PYTHONPATH"])
+
 import hello
+
+sys.path.append("/home/malphonsus/projects/personal/textnets/src/textnets")
+print(os.environ["PYTHONPATH"])
+
 
 def func(x):
     return x + 1
