@@ -1,2 +1,3 @@
-msg = "Hello World"
+msg: str = "Hello World"
+
 print(msg)

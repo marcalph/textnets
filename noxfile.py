@@ -1,28 +1,39 @@
 import nox
+import os
 
-locations = "src", "noxfile.py", "tests"
+locations = "src", "tests"
 
+# nox.options.sessions = "lint", "tests"
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session()
 def tests(session):
-    session.run("pytest", "--cov")
+    args = session.posargs or locations
+    session.install("pytest", "pytest-cov")
+    session.run("pytest", "--cov", *args)
 
 
-@nox.session(python=["3.8", "3.7"])
+@nox.session()
 def lint(session):
     args = session.posargs or locations
     session.install(
         "flake8",
-        "flake8-bandit",
         "flake8-black",
-        "flake8-bugbear",
         "flake8-import-order",
     )
     session.run("flake8", *args)
 
 
-@nox.session(python="3.8")
+@nox.session()
 def black(session):
     args = session.posargs or locations
     session.install("black")
-    session.run("black", *args)
+    session.run("black", "--check", *args)
+
+
+@nox.session()
+def mypy(session):
+    os.environ['MYPYPATH']=os.environ['PYTHONPATH']
+    print(os.environ['MYPYPATH'])
+    session.install("mypy")
+    session.install("-r", "requirements.txt")
+    session.run("mypy", "src")
