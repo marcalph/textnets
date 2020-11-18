@@ -36,4 +36,4 @@ def mypy(session):
     print(os.environ['MYPYPATH'])
     session.install("mypy")
     session.install("-r", "requirements.txt")
-    session.run("mypy", "src")
+    session.run("mypy", "src", "--strict")

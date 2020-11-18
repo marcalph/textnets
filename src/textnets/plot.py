@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # type: ignore
 
-import numpy as np
+import numpy as np  # type: ignore
 
 x = np.linspace(0, 20, 100)
 # Create a list of evenly-spaced numbers over the range
