@@ -11,8 +11,6 @@ def greet_all(names: List[str]) -> None:
         print('Hello ' + name)
 
 
-
-
 names = ["Alice", "Bob", "Charlie"]
 ages = [10, 20, 30]
 

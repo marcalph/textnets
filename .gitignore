@@ -26,6 +26,7 @@ MANIFEST
 #Development
 .vscode
 .python-version
+**/.ipynb_checkpoints
 
 # Unit test / coverage reports
 htmlcov/

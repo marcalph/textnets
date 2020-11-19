@@ -8,6 +8,7 @@ locations = "src", "tests"
 @nox.session()
 def tests(session):
     args = session.posargs or locations
+    session.run("pip", "install", "-r", "requirements.txt")
     session.install("pytest", "pytest-cov")
     session.run("pytest", "--cov", *args)
 
