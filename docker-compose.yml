@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  textnets:
+    image: textnets
+    build:
+      context: ..
+      dockerfile: ./Dockerfile
